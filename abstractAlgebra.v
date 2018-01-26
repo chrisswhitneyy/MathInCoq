@@ -64,12 +64,14 @@ Inductive B : Type := | nil : B .
 Definition f1 (a:B) (b:B) : B := a.
 Definition g1 (a:B) (b:B) : B := a.
 
-Theorem B_fun_comp :
-  forall x y z : B,
-    f1 (g1 x y) z = f1 x (g1 y z).
+Theorem function_comp_associative:
+  forall A  (f : A -> A ) (g : A -> A),
+  forall x : A,
+    f ( g x ) = g ( f x ).
 Proof.
-  unfold f1, g1. trivial.
-Qed.
+  intros A f g x. admit.
+Admitted.
+
 
                                                            
 
