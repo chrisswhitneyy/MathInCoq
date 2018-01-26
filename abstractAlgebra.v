@@ -56,8 +56,10 @@ Theorem g_assosicative :
     g a (g b c) = g (g a b) c.
 Proof.
   intros a b c. unfold g.
-                                                               }
-                                                                        
+  admit.
+Admitted.
+
+  
                                                            
 
 
