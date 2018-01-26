@@ -59,7 +59,18 @@ Proof.
   admit.
 Admitted.
 
-  
+Inductive B : Type := | nil : B .
+
+Definition f1 (a:B) (b:B) : B := a.
+Definition g1 (a:B) (b:B) : B := a.
+
+Theorem B_fun_comp :
+  forall x y z : B,
+    f1 (g1 x y) z = f1 x (g1 y z).
+Proof.
+  intros x y z. unfold f1, g1. trivial.
+Qed.
+
                                                            
 
 
