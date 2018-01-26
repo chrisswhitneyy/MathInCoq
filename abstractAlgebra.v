@@ -68,7 +68,7 @@ Theorem B_fun_comp :
   forall x y z : B,
     f1 (g1 x y) z = f1 x (g1 y z).
 Proof.
-  intros x y z. unfold f1, g1. trivial.
+  unfold f1, g1. trivial.
 Qed.
 
                                                            
