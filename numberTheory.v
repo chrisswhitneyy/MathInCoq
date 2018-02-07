@@ -1,12 +1,12 @@
 Require Import Coq.ZArith.ZArith
                Coq.ZArith.Znumtheory.
 
-Theorem prime_a :
-  forall a n : Z,
-    Z.gt a 0%Z -> Z.gt n 1%Z ->
-    prime ((Z.pow a n) - 1%Z) ->
-    Z.eq a 2%Z /\ prime n.
+Theorem prime_fact_1 :
+  forall a n : Z, Z.gt a 0%Z -> Z.gt n 0%Z -> Z.divide 2 (a^n) -> Z.divide (2^n) (a^n).
 Proof.
-  intros. split. 
-  - simpl.
+  intros a n gta0 gtn0 divides_an. admit.
 Admitted.
+
+
+
+  
