@@ -24,6 +24,9 @@ Axiom id_r : forall a, a <+> e = a.
 (* [i a] is the right-inverse of [a]. *)
 Axiom inv_r : forall a, a <+> i a = e.
 
+(* [i a] is the left-inverse of [a]. *)
+Axiom inv_l : forall a, i a <+> a = e.
+
 (* Theorem 2.47. If G is a group and g in G, 
    then for all n,m in Z g^n g^m = g^(n + m) *)
 
@@ -38,23 +41,13 @@ Proof.
   intros. rewrite <- assoc. rewrite H. reflexivity.
 Qed.
 
-(* Theorem 2.42. If G is a group, then for all g,h in G, 
-   the equations gx = h and yg=h have unique solutions 
-   for x and y in G.*)
-Theorem unquie_soln:
-  forall g h x y: G,
-    g <+> x = h /\ y <+> g = h -> y <> x.
-Proof.
-  intros g h x y eqnH. admit.
-Admitted.
-
 (* Theorem 2.44. If G is a group, then (g^-1)^-1 = g forall g in G *)
 Theorem g_inverse_inverse_g :
-  forall g : G,
+  forall g a : G,
+    i g = a -> i a = g ->
     i (i g) = g.
-Proof.
-  intros g. admit.
-Admitted.
+Proof. intros. rewrite H. rewrite H0. reflexivity. Qed.
+
 
 
 
