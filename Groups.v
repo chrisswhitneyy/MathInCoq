@@ -32,11 +32,30 @@ Axiom inv_r : forall a, a <+> i a = e.
    for a sub class of operations. *) 
 Theorem expo_rule1 :
   forall g m n: G,
-    g <+> (n <+> m) = g <+> n <+> g <+> m -> 
-    (g <+> n ) <+> (g <+> m) = g <+> (n <+> m).
+    (g <+> (n <+> m) = g <+> n <+> g <+> m) -> 
+    ( (g <+> n ) <+> (g <+> m) = g <+> (n <+> m) ).
 Proof.
   intros. rewrite <- assoc. rewrite H. reflexivity.
 Qed.
+
+(* Theorem 2.42. If G is a group, then for all g,h in G, 
+   the equations gx = h and yg=h have unique solutions 
+   for x and y in G.*)
+Theorem unquie_soln:
+  forall g h x y: G,
+    g <+> x = h /\ y <+> g = h -> y <> x.
+Proof.
+  intros g h x y eqnH. admit.
+Admitted.
+
+(* Theorem 2.44. If G is a group, then (g^-1)^-1 = g forall g in G *)
+Theorem g_inverse_inverse_g :
+  forall g : G,
+    i (i g) = g.
+Proof.
+  intros g. admit.
+Admitted.
+
 
 
 
